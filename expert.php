@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 // Below are several code blocks, read them, understand them and try to find whats wrong.
 // Once this exercise is finished, we'll go over the code all together and we can share how we debugged the following problems.
 // Try to fix the code every time and good luck ! (write down how you found out the answer and how you debugged the problem)
@@ -36,10 +40,8 @@ new_exercise(3);
 // === Exercise 3 ===
 // This should echo ` "Debugged !" `, fix it so that that is the literal text echo'ed
 
-//Add quote marks
-$str = '"Debugged !" Also very fun';
-// Add 2 with the substract because we added 2 elements
-echo substr($str, 0, 12);
+$str = "Debugged ! Also very fun";
+echo substr($str, 0, 10);
 
 
 
@@ -171,8 +173,8 @@ $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car']
 $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
 // If you want to run through large arrays don't use count() function in the loops , its a over head in performance,  copy the count() value into a variable and use that value in loops for a better performance.
-$array_length = count($areTheseFruits);
-for($i=0; $i <= $array_length; $i++) {
+$array_length = count($areTheseFruits) ;
+for($i=0; $i < $array_length; $i++) {
     if(!in_array($areTheseFruits[$i], $validFruits)) {
         unset($areTheseFruits[$i]);
     }
